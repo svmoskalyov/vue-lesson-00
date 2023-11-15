@@ -2,6 +2,7 @@
   <h1>{{ title }}</h1>
   <Button @click="increments" outlined>Click me</Button>
   <DirectivesTest />
+  <StarRating :rating="3.5" />
 
   <!-- <div id="app"></div> -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -12,6 +13,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Button from "./components/Button.vue";
 import DirectivesTest from "./components/DirectivesTest.vue";
+import StarRating from "./components/StarRating.vue";
 
 export default {
   name: "App",
@@ -19,6 +21,7 @@ export default {
     // HelloWorld
     Button,
     DirectivesTest,
+    StarRating,
   },
   data() {
     return {

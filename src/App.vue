@@ -1,6 +1,8 @@
 <template>
   <h1>{{ title }}</h1>
   <Button @click="increments" outlined>Click me</Button>
+  <DirectivesTest />
+
   <!-- <div id="app"></div> -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -9,12 +11,14 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import Button from "./components/Button.vue";
+import DirectivesTest from "./components/DirectivesTest.vue";
 
 export default {
   name: "App",
   components: {
     // HelloWorld
     Button,
+    DirectivesTest,
   },
   data() {
     return {

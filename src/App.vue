@@ -1,11 +1,6 @@
 <template>
   <div :id="$style.app">
-    <ApartmentsItem
-      :descr="apartment.descr"
-      :price="apartment.price"
-      :rating="apartment.rating"
-      :imgSrc="`https://c4.wallpaperflare.com/wallpaper/427/193/66/evening-nordland-europe-starry-night-wallpaper-preview.jpg`"
-    />
+    <ApartmentsList :items="apartments" />
   </div>
 
   <!-- <h1>{{ title }}</h1> -->
@@ -18,7 +13,8 @@
 </template>
 
 <script>
-import ApartmentsItem from "./components/apartment/ApartmentsItem.vue";
+import ApartmentsList from "./components/apartment/ApartmentsList.vue";
+import apartments from "./components/apartment/apartments.json";
 // import HelloWorld from './components/HelloWorld.vue'
 // import Button from "./components/Button.vue";
 // import DirectivesTest from "./components/DirectivesTest.vue";
@@ -27,7 +23,7 @@ import ApartmentsItem from "./components/apartment/ApartmentsItem.vue";
 export default {
   name: "App",
   components: {
-    ApartmentsItem,
+    ApartmentsList,
     // HelloWorld
     // Button,
     // DirectivesTest,
@@ -35,6 +31,7 @@ export default {
   },
   data() {
     return {
+      apartments,
       apartment: {
         id: "5cwtgf472gvd28csajhvcs8",
         title: "Apartment title",

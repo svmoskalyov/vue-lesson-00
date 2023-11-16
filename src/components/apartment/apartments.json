@@ -1,0 +1,66 @@
+[
+  {
+    "id": "5cwtgf472gvd28csajhvcs8",
+    "title": "Apartment",
+    "imgUrl": "https://c4.wallpaperflare.com/wallpaper/427/193/66/evening-nordland-europe-starry-night-wallpaper-preview.jpg",
+    "descr": "bla-bla-bla, bla-bla-bla, bla-bla-bla.",
+    "price": 1045,
+    "rating": 4.7,
+    "location": {
+      "city": "Odessa"
+    },
+    "owner": {
+      "name": "Kosel",
+      "phone": "123-123-1234",
+      "email": "asd@gmail.com"
+    }
+  },
+  {
+    "id": "2cwtgf472gvd28csajhvcs8",
+    "title": "Apartment",
+    "imgUrl": "https://c1.wallpaperflare.com/preview/736/595/595/corridor-hallway-office-light-pendant.jpg",
+    "descr": "bla-bla-bla, bla-bla-bla, bla-bla-bla.",
+    "price": 1145,
+    "rating": 4.3,
+    "location": {
+      "city": "Kyiv"
+    },
+    "owner": {
+      "name": "Mika",
+      "phone": "123-123-1234",
+      "email": "asd@gmail.com"
+    }
+  },
+  {
+    "id": "1cwtgf472gvd28csajhvcs8",
+    "title": "Apartment",
+    "imgUrl": "https://c4.wallpaperflare.com/wallpaper/626/677/261/table-sofa-tree-stone-wallpaper-preview.jpg",
+    "descr": "bla-bla-bla, bla-bla-bla, bla-bla-bla.",
+    "price": 845,
+    "rating": 3.4,
+    "location": {
+      "city": "Dnepr"
+    },
+    "owner": {
+      "name": "Kosel",
+      "phone": "123-123-1234",
+      "email": "asd@gmail.com"
+    }
+  },
+  {
+    "id": "3cwtgf472gvd28csajhvcs8",
+    "title": "Apartment",
+    "imgUrl": "https://c4.wallpaperflare.com/wallpaper/524/838/464/house-palm-trees-villa-pool-stones-hd-wallpaper-preview.jpg",
+    "descr": "bla-bla-bla, bla-bla-bla, bla-bla-bla.",
+    "price": 1245,
+    "rating": 4.5,
+    "location": {
+      "city": "Lviv"
+    },
+    "owner": {
+      "name": "Ivan",
+      "phone": "123-123-1234",
+      "email": "asd@gmail.com"
+    }
+  }
+]

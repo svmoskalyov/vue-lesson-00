@@ -1,9 +1,14 @@
 <template>
   <div :id="$style.app">
     <!-- <input type="text" v-model="text"> -->
-    <h2>out: {{ text }}</h2>
+    <!-- <h2>out: {{ text }}</h2>
     <CustomSelect :items="['name', 'label', 'salary']" />
-    <CustomInput v-model="text" />
+    <CustomInput v-model="text" /> -->
+<h2>out: {{ text }}</h2>
+
+    <Container>
+      <ApartmentFilterForm class="apartments-filter" @submit="logger" />
+    </Container>
 
     <ApartmentsList :items="apartments">
       <template v-slot:title>New title</template>
@@ -24,22 +29,31 @@
 import apartments from "./components/apartment/apartments.json";
 import ApartmentsList from "./components/apartment/ApartmentsList.vue";
 import ApartmentsItem from "./components/apartment/ApartmentsItem.vue";
-import CustomInput from "./components/shared/CustomInput.vue";
-import CustomSelect from "./components/shared/CustomSelect.vue";
+// import CustomInput from "./components/shared/CustomInput.vue";
+// import CustomSelect from "./components/shared/CustomSelect.vue";
+import ApartmentFilterForm from "./components/apartment/ApartmentFilterForm.vue";
+import Container from "./components/shared/Container.vue";
 
 export default {
   name: "App",
   components: {
+    Container,
+    ApartmentFilterForm,
     ApartmentsList,
     ApartmentsItem,
-    CustomInput,
-    CustomSelect,
+    // CustomInput,
+    // CustomSelect,
   },
   data() {
     return {
-      text: "",
+      text: "zxc",
       apartments,
     };
+  },
+  methods: {
+    logger(value) {
+      console.log("form value", value);
+    },
   },
 };
 </script>

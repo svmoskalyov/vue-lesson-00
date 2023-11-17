@@ -26,5 +26,10 @@ export default {
   outline: none;
   line-height: inherit;
   padding: 8px 15px;
+  min-width: 220px;
+
+  &::placeholder {
+    color: inherit;
+  }
 }
 </style>

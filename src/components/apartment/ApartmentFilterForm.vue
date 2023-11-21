@@ -1,6 +1,6 @@
 <template>
   <form class="form" @submit.prevent="handleSubmit">
-    <CustomSelect :items="cities" class="form__select" v-model="city" />
+    <CustomSelect v-model="city" :items="cities" class="form__select"  />
     <CustomInput v-model="price" placeholder="Price from" />
     <SubmitButton class="form__submit" type="submit"> Submit </SubmitButton>
   </form>

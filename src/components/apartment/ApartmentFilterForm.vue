@@ -1,6 +1,6 @@
 <template>
   <form class="form" @submit.prevent="handleSubmit">
-    <CustomSelect v-model="city" :items="cities" class="form__select"  />
+    <CustomSelect v-model="city" :items="cities" />
     <CustomInput v-model="price" placeholder="Price from" />
     <SubmitButton class="form__submit" type="submit"> Submit </SubmitButton>
   </form>
@@ -46,5 +46,6 @@ export default {
 <style lang="scss" scoped>
 .form {
   display: flex;
+  gap: 12px;
 }
 </style>

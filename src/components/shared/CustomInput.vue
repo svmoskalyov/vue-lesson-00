@@ -1,19 +1,16 @@
 <template>
-  <input v-on="listeners" class="custom-input" />
+  <input
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+    class="custom-input"
+  />
 </template>
 
 <script>
 export default {
   name: "CustomInput",
-  computed: {
-    listeners() {
-      return {
-        // eslint-disable-next-line vue/no-deprecated-dollar-listeners-api
-        ...this.$listeners,
-        input: (event) => this.$emit("input", event.target.value),
-      };
-    },
-  },
+  props: ["modelValue"],
+  emits: ["update:modelValue"],
 };
 </script>
 

@@ -1,22 +1,28 @@
 <template>
-  <div :id="$style.app">
-    <Container>
-      <ApartmentFilterForm class="apartments-filter" @submit="filter" />
-    </Container>
-    <p v-if="!filteredApartments.length">Not found</p>
+  <div id="app">
+    <div class="content">
+      <AppHeader />
 
-    <ApartmentsList v-else :items="filteredApartments">
-      <template v-slot:title>New title</template>
-      <template v-slot:apartment="{ apartment }">
-        <ApartmentsItem
-          :key="apartment.id"
-          :descr="apartment.descr"
-          :rating="apartment.rating"
-          :imgSrc="apartment.imgUrl"
-          :price="apartment.price"
-        />
-      </template>
-    </ApartmentsList>
+      <Container>
+        <ApartmentFilterForm class="apartments-filter" @submit="filter" />
+        <p v-if="!filteredApartments.length">Not found</p>
+
+        <ApartmentsList v-else :items="filteredApartments">
+          <template v-slot:title>New title</template>
+          <template v-slot:apartment="{ apartment }">
+            <ApartmentsItem
+              :key="apartment.id"
+              :descr="apartment.descr"
+              :rating="apartment.rating"
+              :imgSrc="apartment.imgUrl"
+              :price="apartment.price"
+            />
+          </template>
+        </ApartmentsList>
+      </Container>
+    </div>
+
+    <AppFooter />
   </div>
 </template>
 
@@ -26,6 +32,8 @@ import ApartmentsList from "./components/apartment/ApartmentsList.vue";
 import ApartmentsItem from "./components/apartment/ApartmentsItem.vue";
 import ApartmentFilterForm from "./components/apartment/ApartmentFilterForm.vue";
 import Container from "./components/shared/Container.vue";
+import AppFooter from "./components/Footer.vue";
+import AppHeader from "./components/Header.vue";
 
 export default {
   name: "App",
@@ -34,6 +42,8 @@ export default {
     ApartmentFilterForm,
     ApartmentsList,
     ApartmentsItem,
+    AppFooter,
+    AppHeader,
   },
   data() {
     return {
@@ -97,13 +107,20 @@ export default {
 };
 </script>
 
-<style module>
+<style lang="scss" scoped>
 #app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.content {
+  flex-grow: 1;
+  padding-top: 120px;
+}
+.apartments-filter {
+  margin-bottom: 40px;
 }
 </style>

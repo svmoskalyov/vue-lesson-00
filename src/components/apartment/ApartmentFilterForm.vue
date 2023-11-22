@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     handleSubmit() {
+      console.log('handleSubmit -->', 'city: ', this.city, 'price: ', this.price);
       this.$emit("submit", { city: this.city, price: this.price });
     },
   },
@@ -47,5 +48,9 @@ export default {
 .form {
   display: flex;
   gap: 12px;
+}
+
+.form__submit:hover {
+  background-color: orangered;
 }
 </style>

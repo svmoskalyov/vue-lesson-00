@@ -10,9 +10,14 @@
         <StarRating :rating="rating" />
       </div>
       <div class="apartments-item__price">UAH {{ price }}</div>
-      <a href="http://google.com" @click.prevent.stop="handleLinkClick"
+      <!-- <a href="http://google.com" @click.prevent.stop="handleLinkClick"
         >google</a
-      >
+      > -->
+
+      <router-link
+        :to="{ name: 'apartment' }"
+        class="apartments-item__link"
+      ></router-link>
     </div>
   </div>
 </template>
@@ -104,6 +109,14 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <main class="homepage">
     <Container>
-      <ApartmentFilterForm class="apartments-filter" @submit="filter" />
+      <ApartmentsFilterForm class="apartments-filter" @submit="filter" />
       <p v-if="!filteredApartments.length">Not found</p>
 
       <ApartmentsList v-else :items="filteredApartments">
@@ -25,14 +25,14 @@
 import apartments from "../components/apartment/apartments.json";
 import ApartmentsList from "../components/apartment/ApartmentsList.vue";
 import ApartmentsItem from "../components/apartment/ApartmentsItem.vue";
-import ApartmentFilterForm from "../components/apartment/ApartmentFilterForm.vue";
+import ApartmentsFilterForm from "../components/apartment/ApartmentsFilterForm.vue";
 import Container from "../components/shared/Container.vue";
 
 export default {
   name: "Home",
   components: {
     Container,
-    ApartmentFilterForm,
+    ApartmentsFilterForm,
     ApartmentsList,
     ApartmentsItem,
   },

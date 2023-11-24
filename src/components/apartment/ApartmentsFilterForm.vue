@@ -12,7 +12,7 @@ import CustomInput from "../shared/CustomInput.vue";
 import SubmitButton from "../shared/Button.vue";
 
 export default {
-  name: "ApartmentFilterForm",
+  name: "ApartmentsFilterForm",
   components: {
     CustomSelect,
     CustomInput,

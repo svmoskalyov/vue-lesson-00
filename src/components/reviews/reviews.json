@@ -1,0 +1,17 @@
+[
+  {
+    "author": "Alex",
+    "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quia ut fugit ullam illo exercitationem id, quisquam quas molestias doloribus. Unde reprehenderit corrupti ex asperiores quidem vitae eius veritatis laudantium.",
+    "rating": 3.5
+  },
+  {
+    "author": "Den",
+    "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quia ut fugit ullam illo exercitationem id, quisquam quas molestias doloribus. Unde reprehenderit corrupti ex asperiores quidem vitae eius veritatis laudantium.",
+    "rating": 4.8
+  },
+  {
+    "author": "Lisa",
+    "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quia ut fugit ullam illo exercitationem id, quisquam quas molestias doloribus. Unde reprehenderit corrupti ex asperiores quidem vitae eius veritatis laudantium.",
+    "rating": 2.8
+  }
+]

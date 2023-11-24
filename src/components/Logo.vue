@@ -13,7 +13,7 @@ export default {
 
 <style lang="scss" scoped>
 .logo {
-  display: flex;
+  display: inline-flex;
   text-align: center;
   gap: 4px;
 }

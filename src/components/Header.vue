@@ -1,7 +1,8 @@
 <template>
   <header class="header">
-    <Container>
+    <Container class="header__box">
       <Logo />
+      <NavBar />
     </Container>
   </header>
 </template>
@@ -9,12 +10,14 @@
 <script>
 import Container from "./shared/Container.vue";
 import Logo from "./Logo.vue";
+import NavBar from "./NavBar.vue";
 
 export default {
   name: "Header",
   components: {
     Container,
     Logo,
+    NavBar,
   },
 };
 </script>
@@ -22,11 +25,16 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 16px 0;
   background: $secondary-color;
+
+  &__box {
+    display: flex;
+    gap: 40px;
+  }
 }
 </style>

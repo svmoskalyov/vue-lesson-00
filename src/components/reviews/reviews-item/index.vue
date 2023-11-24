@@ -24,8 +24,14 @@ export default {
 
 <style lang="scss" scoped>
 .reviews-item {
-    &__content {
-        
-    }
+  padding: 20px;
+  background: #fff;
+  border: 2px solid #e1efff;
+  border-top: 1px;
+
+  &__content {
+    padding-top: 20px;
+    line-height: 1.3;
+  }
 }
 </style>

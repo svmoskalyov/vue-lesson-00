@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .apartments-owner {
+  margin-bottom: 20px;
   padding: 20px;
   background: #e1efff;
   font-weight: 400;
@@ -30,9 +31,6 @@ export default {
     font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 20px;
-  }
-
-  &__info {
   }
 }
 </style>

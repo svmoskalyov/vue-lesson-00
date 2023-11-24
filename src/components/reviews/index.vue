@@ -74,6 +74,26 @@ export default {
 
 <style lang="scss" scoped>
 .reviews {
+  background: #e1efff;
+  font-weight: 400;
+  min-width: 300px;
+
+  &__heading {
+    padding: 10px 20px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__show-more {
     padding: 12px;
     width: 100%;

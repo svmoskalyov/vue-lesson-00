@@ -33,5 +33,13 @@ export default {
 
 <style lang="scss" scoped>
 .reviews-heading {
+  display: flex;
+  gap: 20px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 </style>

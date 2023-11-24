@@ -12,9 +12,12 @@ export default {
 
 <style lang="scss" scoped>
 .reviews-avatar {
+  display: flex;
+  align-items: center;
+
   &__img {
-      width: 18px;
-  height: 18px;
+    width: 40px;
+    height: 40px;
   }
 }
 </style>

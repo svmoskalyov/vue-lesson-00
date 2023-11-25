@@ -44,5 +44,6 @@ export default {
   padding: 8px 15px;
   cursor: pointer;
   min-width: 220px;
+  background-color: #fff;
 }
 </style>

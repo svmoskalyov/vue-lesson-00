@@ -22,11 +22,12 @@
 </template>
 
 <script>
-import apartments from "../components/apartment/apartments.json";
+// import apartments from "../components/apartment/apartments.json";
 import ApartmentsList from "../components/apartment/ApartmentsList.vue";
 import ApartmentsItem from "../components/apartment/ApartmentsItem.vue";
 import ApartmentsFilterForm from "../components/apartment/ApartmentsFilterForm.vue";
 import Container from "../components/shared/Container.vue";
+import { getApartmentsList } from "@/services/apartments.service";
 
 export default {
   name: "Home",
@@ -38,7 +39,7 @@ export default {
   },
   data() {
     return {
-      apartments,
+      apartments: [],
       filters: {
         city: "",
         price: 0,
@@ -64,6 +65,15 @@ export default {
 
       return two;
     },
+  },
+  async created() {
+    try {
+      const { data } = await getApartmentsList();
+      this.apartments = data;
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   },
   methods: {
     filter({ city, price }) {

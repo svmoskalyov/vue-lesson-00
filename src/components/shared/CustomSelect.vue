@@ -1,8 +1,19 @@
 <template>
-  <select
+  <!-- <select
     @change="$emit('update:modelValue', $event.target.value)"
     class="custom-select"
   >
+    <option
+      v-for="item in formatedItems"
+      :key="item.value"
+      :value="item.value"
+      :selected="item.selected"
+    >
+      {{ item.label }}
+    </option>
+  </select> -->
+
+  <select v-on="listeners" class="custom-select">
     <option
       v-for="item in formatedItems"
       :key="item.value"
@@ -24,6 +35,11 @@ export default {
     },
   },
   computed: {
+    listeners() {
+      return {
+        input: (event) => this.$emit("update:modelValue", event.target.value),
+      };
+    },
     formatedItems() {
       return this.items.map((item) => {
         return typeof item === "object" ? item : { value: item, label: item };

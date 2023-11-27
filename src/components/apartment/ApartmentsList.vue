@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <slot name="title"></slot>
+    <!-- <slot name="title"></slot> -->
     <div class="apartments-list">
       <template v-for="apartment in items">
         <slot name="apartment" v-bind:apartment="apartment"></slot>
@@ -31,5 +31,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 20px 0;
 }
 </style>

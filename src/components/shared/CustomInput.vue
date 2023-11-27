@@ -1,34 +1,42 @@
 <template>
-  <div class="wrapper-input">
-    <input
+  <!-- <div class="wrapper-input"> -->
+  <input v-on="listeners" class="custom-input"/>
+
+  <!-- <input
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       class="custom-input"
       v-bind:placeholder="placeholder"
-    />
-    <span class="custom-input__error">{{ errorMessage }}</span>
-  </div>
+    /> -->
+    <!-- <span class="custom-input__error">{{ errorMessage }}</span> -->
+  <!-- </div> -->
 </template>
 
 <script>
 export default {
   name: "CustomInput",
-  props: {
-    modelValue: {
-      type: String,
-      required: true,
-    },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    placeholder: {
-      type: String,
-      default: "",
+  // props: {
+  // modelValue: {
+  //   type: String,
+  //   required: true,
+  // },
+  // errorMessage: {
+  //   type: String,
+  //   default: "",
+  // },
+  // placeholder: {
+  //   type: String,
+  //   default: "",
+  // },
+  // },
+  // emits: ["update:modelValue"],
+  computed: {
+    listeners() {
+      return {
+        input: (event) => this.$emit("update:modelValue", event.target.value),
+      };
     },
   },
-  // props: ["modelValue"],
-  emits: ["update:modelValue"],
 };
 </script>
 

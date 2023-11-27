@@ -1,4 +1,7 @@
 <template>
+  <h3>p: {{ city }}</h3>
+  <h3>c: {{ price }}</h3>
+
   <form class="form" @submit.prevent="handleSubmit">
     <CustomSelect v-model="city" :items="cities" />
     <CustomInput v-model="price" placeholder="Price from" />
@@ -37,14 +40,10 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log(
-        "handleSubmit -->",
-        "city: ",
-        this.city,
-        "price: ",
-        this.price
-      );
-      this.$emit("submit", { city: this.city, price: this.price });
+      this.$emit("submit", {
+        city: this.city,
+        price: this.price,
+      });
     },
   },
 };

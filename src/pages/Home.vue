@@ -5,7 +5,7 @@
       <p v-if="!filteredApartments.length">Not found</p>
 
       <ApartmentsList v-else :items="filteredApartments">
-        <template v-slot:title>New title</template>
+        <!-- <template v-slot:title>New title</template> -->
         <template v-slot:apartment="{ apartment }">
           <ApartmentsItem
             :key="apartment.id"
@@ -48,59 +48,35 @@ export default {
   },
   computed: {
     filteredApartments() {
-      console.log(
-        "filteredApartments -->",
-        "City: ",
-        this.filters.city,
-        "Price: ",
-        this.filters.price
-      );
-      // return this.filterByCityName(this.filterByPrice(this.apartments));
-
-      const one = this.filterByPrice(this.apartments);
-      console.log("🚀 ~ filteredApartments ~ one:", one);
-
-      const two = this.filterByCityName(one);
-      console.log("🚀 ~ filteredApartments ~ two:", two);
-
-      return two;
+      return this.filterByCityName(this.filterByPrice(this.apartments));
     },
   },
   async created() {
     try {
       const { data } = await getApartmentsList();
       this.apartments = data;
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
   },
   methods: {
     filter({ city, price }) {
-      console.log("filter -->", city, price);
+      console.log("🚀 ~ filter ~ price:", price);
+      console.log("🚀 ~ filter ~ city:", city);
       this.filters.city = city;
       this.filters.price = price;
-      console.log("filter this -->", this.filters.city, this.filters.price);
     },
     filterByCityName(apartments) {
-      console.log("filterByCityName -->", this.filters.city);
-      // console.log(apartments);
-      // console.log(this.filters.city);
       if (!this.filters.city) return apartments;
 
       return apartments.filter((apartment) => {
-        console.log("filterByCityName filter -->", apartment.location.city);
-        // console.log(this.filters.city);
         return apartment.location.city === this.filters.city;
       });
     },
     filterByPrice(apartments) {
-      console.log("filterByPrice -->", this.filters.price);
-      // console.log(this.filters.price);
       if (!this.filters.price) return apartments;
 
       return apartments.filter((apartment) => {
-        console.log("filterByPrice filter -->", apartment.price);
         return apartment.price >= this.filters.price;
       });
     },

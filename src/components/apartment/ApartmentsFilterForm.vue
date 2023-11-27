@@ -4,7 +4,12 @@
 
   <form class="form" @submit.prevent="handleSubmit">
     <CustomSelect v-model="city" :items="cities" />
-    <CustomInput v-model="price" placeholder="Price from" />
+    <CustomInput
+      v-model="price"
+      placeholder="Price from"
+      error-message="not empty"
+      :rules="rules"
+    />
     <SubmitButton class="form__submit" type="submit"> Submit </SubmitButton>
   </form>
 </template>
@@ -13,6 +18,7 @@
 import CustomSelect from "../shared/CustomSelect.vue";
 import CustomInput from "../shared/CustomInput.vue";
 import SubmitButton from "../shared/Button.vue";
+import { isReuired, charLimit } from "@/utils/validationRules";
 
 export default {
   name: "ApartmentsFilterForm",
@@ -28,6 +34,9 @@ export default {
     };
   },
   computed: {
+    rules() {
+      return [isReuired, charLimit(10)];
+    },
     cities() {
       return [
         { value: "", label: "City", selected: true },

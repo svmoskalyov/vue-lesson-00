@@ -26,7 +26,11 @@ export default {
       error: "",
     };
   },
-  inject: ["form"],
+  inject: {
+    form: {
+      default: null,
+    }
+  },
   inheritAttrs: false,
   props: {
     value: {

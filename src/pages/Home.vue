@@ -1,23 +1,25 @@
 <template>
   <main class="homepage">
-    <Container>
-      <ApartmentsFilterForm class="apartments-filter" @submit="filter" />
-      <p v-if="!filteredApartments.length">Not found</p>
+    <SectionWithHeaderSpacer>
+      <Container>
+        <ApartmentsFilterForm class="apartments-filter" @submit="filter" />
+        <p v-if="!filteredApartments.length">Not found</p>
 
-      <ApartmentsList v-else :items="filteredApartments">
-        <!-- <template v-slot:title>New title</template> -->
-        <template v-slot:apartment="{ apartment }">
-          <ApartmentsItem
-            :key="apartment.id"
-            :id="apartment.id"
-            :descr="apartment.descr"
-            :rating="apartment.rating"
-            :imgSrc="apartment.imgUrl"
-            :price="apartment.price"
-          />
-        </template>
-      </ApartmentsList>
-    </Container>
+        <ApartmentsList v-else :items="filteredApartments">
+          <!-- <template v-slot:title>New title</template> -->
+          <template v-slot:apartment="{ apartment }">
+            <ApartmentsItem
+              :key="apartment.id"
+              :id="apartment.id"
+              :descr="apartment.descr"
+              :rating="apartment.rating"
+              :imgSrc="apartment.imgUrl"
+              :price="apartment.price"
+            />
+          </template>
+        </ApartmentsList>
+      </Container>
+    </SectionWithHeaderSpacer>
   </main>
 </template>
 
@@ -28,6 +30,7 @@ import ApartmentsItem from "../components/apartment/ApartmentsItem.vue";
 import ApartmentsFilterForm from "../components/apartment/ApartmentsFilterForm.vue";
 import Container from "../components/shared/Container.vue";
 import { getApartmentsList } from "@/services/apartments.service";
+import SectionWithHeaderSpacer from "../components/shared/SectionWithHeaderSpacer.vue";
 
 export default {
   name: "Home",
@@ -36,6 +39,7 @@ export default {
     ApartmentsFilterForm,
     ApartmentsList,
     ApartmentsItem,
+    SectionWithHeaderSpacer,
   },
   data() {
     return {

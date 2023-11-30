@@ -1,14 +1,22 @@
 <template>
-  <AuthContainer class="login">
-    <MainTitle class="login__title">Login</MainTitle>
-    <Form ref="form" class="login__form" @submit.prevent="handleSubmit">
+  <AuthContainer class="registration">
+    <MainTitle class="registration__title">Login</MainTitle>
+    <Form ref="form" class="registration__form" @submit.prevent="handleSubmit">
+      <CustomInput
+        v-model="name"
+        placeholder="Name"
+        autocomplete="username"
+        name="name"
+        :rules="nameRules"
+        class="registration__input"
+      />
       <CustomInput
         v-model="email"
         placeholder="Email"
         autocomplete="email"
         name="email"
         :rules="emailRules"
-        class="login__input"
+        class="registration__input"
       />
       <CustomInput
         v-model="password"
@@ -17,9 +25,18 @@
         type="password"
         name="password"
         :rules="passwordRules"
-        class="login__input"
+        class="registration__input"
       />
-      <Button type="submit" class="login__btn">Login In</Button>
+      <CustomInput
+        v-model="confirmPassword"
+        placeholder="Confirm password"
+        autocomplete="current-password"
+        type="password"
+        name="password"
+        :rules="confirmPassword"
+        class="registration__input"
+      />
+      <Button type="submit" class="registration__btn">Registration</Button>
     </Form>
   </AuthContainer>
 </template>
@@ -35,10 +52,10 @@ import {
   passwordValidation,
   isRequired,
 } from "../../../utils/validationRules";
-import { loginUser } from "@/services/auth.service";
+import { registerUser } from "@/services/auth.service";
 
 export default {
-  name: "Login",
+  name: "Registration",
   components: {
     Form,
     CustomInput,
@@ -48,8 +65,10 @@ export default {
   },
   date() {
     return {
+      name: "",
       email: "",
       password: "",
+      confirmPassword: "",
       // formData: {
       //   email: "",
       //   password: "",
@@ -64,21 +83,38 @@ export default {
         isRequired,
       };
     },
+    nameRules() {
+      return [this.rules.isRequired];
+    },
     emailRules() {
       return [this.rules.isRequired, this.rules.emailValidation];
     },
     passwordRules() {
-      return [this.rules.isRequired];
+      return [this.rules.isRequired, this.rules.passwordValidation];
+    },
+    confirmPassword() {
+      return [
+        (val) => ({
+          hasPassed: val === this.password,
+          message: "password not correct",
+        }),
+      ];
     },
   },
   methods: {
     async handleSubmit() {
-      const isFormValid = this.$refs.form.validate();
+      const { form } = this.$refs;
+      const isFormValid = form.validate();
 
       if (isFormValid) {
         try {
-          const { data } = await loginUser(this.email, this.password);
+          const { data } = await registerUser(
+            this.name,
+            this.email,
+            this.password
+          );
           console.log(data);
+          form.reset();
           // console.log(this.email, this.password);
           // console.log(this.formData);
         } catch (error) {
@@ -91,7 +127,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.login {
+.registration {
   &__title {
     text-align: center;
   }

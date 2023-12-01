@@ -122,7 +122,12 @@ export default {
           // console.log(this.email, this.password);
           // console.log(this.formData);
         } catch (error) {
-          console.error(error);
+          // console.error(error);
+          this.$notify({
+            type: "error",
+            title: "Error",
+            text: error.message,
+          });
         } finally {
           this.loading = false;
         }

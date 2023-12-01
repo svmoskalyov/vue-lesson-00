@@ -19,7 +19,9 @@
         :rules="passwordRules"
         class="login__input"
       />
-      <Button type="submit" class="login__btn">Login In</Button>
+      <Button type="submit" class="login__btn" :loading="loading"
+        >Login In</Button
+      >
     </Form>
   </AuthContainer>
 </template>
@@ -84,7 +86,12 @@ export default {
           // console.log(this.email, this.password);
           // console.log(this.formData);
         } catch (error) {
-          console.error(error);
+          // console.error(error);
+          this.$notify({
+            type: "error",
+            title: "Error",
+            text: error.message,
+          });
         } finally {
           this.loading = false;
         }

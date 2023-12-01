@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Notif />
     <div class="content">
       <AppHeader />
 
@@ -15,12 +16,14 @@
 <script>
 import AppFooter from "./components/Footer.vue";
 import AppHeader from "./components/Header.vue";
+import Notif from "./components/notifications";
 
 export default {
   name: "App",
   components: {
     AppFooter,
     AppHeader,
+    Notif,
   },
 };
 </script>

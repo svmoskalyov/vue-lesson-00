@@ -18,7 +18,7 @@
 import CustomSelect from "../shared/CustomSelect.vue";
 import CustomInput from "../shared/CustomInput.vue";
 import SubmitButton from "../shared/Button.vue";
-import { isReuired, charLimit } from "@/utils/validationRules";
+import { isRequired, charLimit } from "@/utils/validationRules";
 
 export default {
   name: "ApartmentsFilterForm",
@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     rules() {
-      return [isReuired, charLimit(10)];
+      return [isRequired, charLimit(10)];
     },
     cities() {
       return [

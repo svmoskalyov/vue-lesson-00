@@ -48,6 +48,7 @@ export default {
   },
   date() {
     return {
+      loading: false,
       email: "",
       password: "",
       // formData: {
@@ -77,12 +78,15 @@ export default {
 
       if (isFormValid) {
         try {
+          this.loading = true;
           const { data } = await loginUser(this.email, this.password);
           console.log(data);
           // console.log(this.email, this.password);
           // console.log(this.formData);
         } catch (error) {
           console.error(error);
+        } finally {
+          this.loading = false;
         }
       }
     },

@@ -36,7 +36,9 @@
         :rules="confirmPassword"
         class="registration__input"
       />
-      <Button type="submit" class="registration__btn">Registration</Button>
+      <Button type="submit" class="registration__btn" :loading="loading"
+        >Registration</Button
+      >
     </Form>
   </AuthContainer>
 </template>
@@ -65,6 +67,7 @@ export default {
   },
   date() {
     return {
+      loading: false,
       name: "",
       email: "",
       password: "",
@@ -108,6 +111,7 @@ export default {
 
       if (isFormValid) {
         try {
+          this.loading = true;
           const { data } = await registerUser(
             this.name,
             this.email,
@@ -119,6 +123,8 @@ export default {
           // console.log(this.formData);
         } catch (error) {
           console.error(error);
+        } finally {
+          this.loading = false;
         }
       }
     },

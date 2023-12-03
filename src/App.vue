@@ -3,12 +3,12 @@
     <Notif />
     <div class="content">
       <AppHeader />
-
       <!-- <router-link to="/">Home</router-link>{{ " " }} -->
       <!-- <router-link to="/about">About</router-link>{{ " " }} -->
       <router-view></router-view>
     </div>
 
+    <!-- {{ $store.state.userName }} -->
     <AppFooter />
   </div>
 </template>
@@ -25,6 +25,13 @@ export default {
     AppHeader,
     Notif,
   },
+  // mounted() {
+  //   // console.log(this.$store.state.userName);
+
+  //   setTimeout(() => {
+  //     this.$store.commit("changeName", "Ted");
+  //   }, 1000);
+  // },
 };
 </script>
 

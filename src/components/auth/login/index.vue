@@ -37,7 +37,7 @@ import {
   passwordValidation,
   isRequired,
 } from "../../../utils/validationRules";
-import { loginUser } from "@/services/auth.service";
+// import { loginUser } from "@/services/auth.service";
 
 export default {
   name: "Login",
@@ -76,13 +76,25 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      const isFormValid = this.$refs.form.validate();
+      const { form } = this.$refs;
+      const isFormValid = form.validate();
+      const { password, email } = this;
 
       if (isFormValid) {
         try {
           this.loading = true;
-          const { data } = await loginUser(this.email, this.password);
-          console.log(data);
+          // const { data } = await loginUser(this.email, this.password);
+          // console.log(data);
+
+          // const { user, token } = data;
+          // this.$store.commit("setUserData", user);
+          // this.$store.commit("setToken", token);
+
+          await this.$store.dispatch("login", { password, email });
+
+          this.$router.push({ name: "home" });
+
+          form.reset();
           // console.log(this.email, this.password);
           // console.log(this.formData);
         } catch (error) {

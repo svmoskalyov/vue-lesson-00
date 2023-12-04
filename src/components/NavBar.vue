@@ -12,6 +12,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .nav-link {
   display: inline-flex;
   gap: 12px;
@@ -20,7 +21,7 @@ export default {
   color: #fff;
 
   &:hover {
-    color: aquamarine;
+    color: $main-color;
   }
 }
 </style>

@@ -15,7 +15,7 @@
 
 <script>
 import AppFooter from "./components/Footer.vue";
-import AppHeader from "./components/Header.vue";
+import AppHeader from "./components/header";
 import Notif from "./components/notifications";
 
 export default {

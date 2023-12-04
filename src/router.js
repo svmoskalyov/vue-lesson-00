@@ -11,6 +11,7 @@ const routes = [
   { path: "/about", component: About, name: "about" },
   { path: "/login", component: LoginPage, name: "login" },
   { path: "/registration", component: RegistrationPage, name: "registration" },
+  { path: "/my-orders", component: RegistrationPage, name: "my-orders" },
   { path: "/apartments/:id", component: Apartment, name: "apartment" },
   { path: "/:pathMatch(.*)", component: NotFound, name: "not-found" },
 ];

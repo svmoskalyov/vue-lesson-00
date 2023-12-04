@@ -1,6 +1,6 @@
 <template>
   <AuthContainer class="registration">
-    <MainTitle class="registration__title">Login</MainTitle>
+    <MainTitle class="registration__title">Registration</MainTitle>
     <Form ref="form" class="registration__form" @submit.prevent="handleSubmit">
       <CustomInput
         v-model="name"

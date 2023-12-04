@@ -38,6 +38,7 @@ import {
   isRequired,
 } from "../../../utils/validationRules";
 // import { loginUser } from "@/services/auth.service";
+import { mapActions } from "vuex";
 
 export default {
   name: "Login",
@@ -75,6 +76,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions("auth", ["login"]),
     async handleSubmit() {
       const { form } = this.$refs;
       const isFormValid = form.validate();
@@ -90,7 +92,8 @@ export default {
           // this.$store.commit("setUserData", user);
           // this.$store.commit("setToken", token);
 
-          await this.$store.dispatch("login", { password, email });
+          // await this.$store.dispatch("auth/login", { password, email });
+          await this.login({ password, email });
 
           this.$router.push({ name: "home" });
 

@@ -56,6 +56,13 @@ export default {
   min-width: 220px;
   border: 1px solid transparent;
   padding: 8px 15px;
+  font-family: Montserrat, sans-serif;
+
+  &:hover {
+    background: #fff;
+    color: #ff662d;
+    border: 1px solid #ff662d;
+  }
 
   &--outlined {
     background: none;

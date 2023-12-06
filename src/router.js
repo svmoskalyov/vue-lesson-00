@@ -1,12 +1,19 @@
-import Home from "./pages/Home.vue";
-import Apartment from "./pages/Apartment.vue";
-import About from "./pages/About.vue";
-import LoginPage from "./pages/Login.vue";
-import RegistrationPage from "./pages/Registration.vue";
-import MyOrdersPage from "./pages/MyOrders.vue";
+// import Home from "./pages/Home.vue";
+// import Apartment from "./pages/Apartment.vue";
+// import About from "./pages/About.vue";
+// import LoginPage from "./pages/Login.vue";
+// import RegistrationPage from "./pages/Registration.vue";
+// import MyOrdersPage from "./pages/MyOrders.vue";
 import NotFound from "./components/NotFound.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import store from "./store";
+
+const Home = () => import("./pages/Home.vue");
+const Apartment = () => import("./pages/Apartment.vue");
+const About = () => import("./pages/About.vue");
+const LoginPage = () => import("./pages/Login.vue");
+const RegistrationPage = () => import("./pages/Registration.vue");
+const MyOrdersPage = () => import("./pages/MyOrders.vue");
 
 const routes = [
   { path: "/", component: Home, name: "home" },
